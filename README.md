@@ -1,4 +1,4 @@
-updatable-priority-queue
+updatable-priority-queue REIMPLEMENTATION IN C++
 ===
 
 A generic priority queue implementation based on a binary heap, with an efficient `updateKey` operation.
