@@ -1,6 +1,9 @@
 updatable-priority-queue REIMPLEMENTATION IN C++
 ===
 
+# CREDITS
+- [bbecquet](https://github.com/bbecquet)
+
 A generic priority queue implementation based on a binary heap, with an efficient `updateKey` operation.
 
 It was made first to support the pathfinding algorithms of my [jKstra](https://github.com/bbecquet/jKstra) graph library, but it can probably serve other purposes.
