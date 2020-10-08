@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include <queue>
 #include <vector>
@@ -7,7 +6,7 @@
 #include <functional>
 #include <mutex>
 #include <assert.h>
-#include "UpdatableObservable.cpp";
+#include "UpdatableObservable.cpp"
 using namespace std;
 /*
 Implementazione in c++ della coda con priorità aggiornabile
@@ -58,7 +57,7 @@ public:
 	/// </summary>
 	/// <param name="comp"> Comparatore di less ( a < b ?) </param>
 	updatable_priority_queue(less_then& comp, equal& eq) : le_then{ comp }, eq{ eq }, heap{}{
-		int val = is_base_of<updatable_observable, t>::value;
+		//int val = is_base_of<updatable_observable, T>::value;
 		static_assert(is_base_of<updatable_observable, T>::value);
 		//if (val == 0) exit(1);
 		
@@ -203,6 +202,7 @@ private:
 			std::swap(this->heap[index], this->heap[swapIndex]);
 			index = swapIndex;
 		}
+		return 0;
 	}
 
 
@@ -251,27 +251,27 @@ int main() {
 		i++;
 	}
 
-	auto ale_then = [](int& a, int& c) {
-		return a < c;
-	};
+	//auto ale_then = [](int& a, int& c) {
+	//	return a < c;
+	//};
 
-	auto aequal = [](int& a, int& c) {
-		return a == c;
-	};
-	updatable_priority_queue<
-		int,
-		vector<int>,
-		decltype(ale_then),
-		decltype(aequal)
-	> A{ ale_then, aequal };
+	//auto aequal = [](int& a, int& c) {
+	//	return a == c;
+	//};
+	//updatable_priority_queue<
+	//	int,
+	//	vector<int>,
+	//	decltype(ale_then),
+	//	decltype(aequal)
+	//> A{ ale_then, aequal };
 
-	int a = 12;
-	A.insert(a);
+	//int a = 12;
+	//A.insert(a);
 
-	cout << endl;
-	for (int i = 0; i < A.size(); i++) {
-		cout << A.lookat(i)<<endl;
-	}
+	//cout << endl;
+	//for (int i = 0; i < A.size(); i++) {
+	//	cout << A.lookat(i)<<endl;
+	//}
 	//priority_queue<int> a;
 
 	return 0;
