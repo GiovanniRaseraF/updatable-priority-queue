@@ -8,12 +8,12 @@
 #include <assert.h>
 #include "UpdatableObservable.cpp"
 using namespace std;
+
 /*
 Implementazione in c++ della coda con priorità aggiornabile
 Authot:		Giovanni Rasera
 Git:		https://github.com/GiovanniRaseraF/updatable-priority-queue
 */
-
 template <
 	class T ,		
 	//Un qualsiasi tipo di dato 
@@ -41,7 +41,6 @@ template <
 	*/
 
 	class equal = std::equal_to<typename Container::value_type>
-
 >
 
 class updatable_priority_queue{
@@ -204,75 +203,4 @@ private:
 		}
 		return 0;
 	}
-
-
-
-
-
 };
-
-using pr = updatable_priority_queue<std::pair<int, int>>;
-
-int main() {
-	using namespace std;
-	
-	class b : public  updatable_observable {
-
-	public:
-		int l;
-		b(int s) { l = s; };
-	};
-	
-	auto le_then = [](b& a, b& c) {
-		return a.l < c.l;
-	};
-
-	auto equal = [](b& a, b& c) {
-		return a.l == c.l;
-	};
-
-
-	updatable_priority_queue<
-		b,
-		vector<b>,
-		decltype(le_then),
-		decltype(equal)
-	> Q{le_then, equal};
-
-	for (int i = 10; i > 0; i--) {
-		b in{ i };
-	    int a = Q.insert(in);
-		//cout << a << i;
-	}
-
-	int i = 0;
-	while (i < 10) {
-		cout << Q.lookat(i).l << " ";
-		i++;
-	}
-
-	//auto ale_then = [](int& a, int& c) {
-	//	return a < c;
-	//};
-
-	//auto aequal = [](int& a, int& c) {
-	//	return a == c;
-	//};
-	//updatable_priority_queue<
-	//	int,
-	//	vector<int>,
-	//	decltype(ale_then),
-	//	decltype(aequal)
-	//> A{ ale_then, aequal };
-
-	//int a = 12;
-	//A.insert(a);
-
-	//cout << endl;
-	//for (int i = 0; i < A.size(); i++) {
-	//	cout << A.lookat(i)<<endl;
-	//}
-	//priority_queue<int> a;
-
-	return 0;
-}
