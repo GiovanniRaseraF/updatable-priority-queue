@@ -11,7 +11,7 @@
 using namespace std;
 
 /*
-Implementazione in c++ della coda con priorità aggiornabile
+Implementazione in c++ della coda con prioritï¿½ aggiornabile
 Authot:		Giovanni Rasera
 Git:		https://github.com/GiovanniRaseraF/updatable-priority-queue
 */
@@ -30,7 +30,7 @@ template <
 	// Importante
 	/*
 	Questa riga della definizione del templase definisce la funzione con
-	cui comparo gli elementi ed è ciò che mi permette di astrarre dal tipo
+	cui comparo gli elementi ed ï¿½ ciï¿½ che mi permette di astrarre dal tipo
 	di dato che inserisco
 
 	Da notare che definisco less e quindi devo definire
@@ -44,12 +44,6 @@ template <
 	class equal = std::equal_to<typename Container::value_type>
 >
 
-class updatable_priority_queue {
-private:
-	Container heap;
-	less_then le_then;
-	equal eq;
-	std::mutex stop;
 
 public:
 	/// <summary>
@@ -110,7 +104,7 @@ public:
 
 	/*
 	<summary>
-	Guardo alla copia dell'elemento 0 che è il Minimo
+	Guardo alla copia dell'elemento 0 che ï¿½ il Minimo
 	</summary>
 	 */
 	T peek() {
@@ -122,7 +116,7 @@ public:
 
 	/*
 	<summary>
-	guardo all'elemento 0 che è il minimo
+	guardo all'elemento 0 che ï¿½ il minimo
 	</summary>
 	*/
 	T& peek_address() {
